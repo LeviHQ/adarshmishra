@@ -8,25 +8,25 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'your.email@example.com',
-    href: 'mailto:your.email@example.com',
+    value: 'adarshmishra70931@gmail.com',
+    href: 'mailto:adarshmishra70931@gmail.com',
   },
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: '/in/yourprofile',
-    href: 'https://linkedin.com/in/yourprofile',
+    value: '/in/adarsh-jayprakash-mishra',
+    href: 'https://www.linkedin.com/in/adarsh-jayprakash-mishra',
   },
   {
     icon: Github,
     label: 'GitHub',
-    value: '@yourusername',
-    href: 'https://github.com/yourusername',
+    value: '@Code-By-Adarsh',
+    href: 'https://github.com/Code-By-Adarsh',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'India',
+    value: 'Boisar, Palghar, Maharashtra',
     href: null,
   },
 ];
