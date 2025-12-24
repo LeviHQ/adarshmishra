@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, FileText, Github, Linkedin } from 'lucide-react';
+import profileImage from '@/assets/profile-placeholder.png';
 
 const HeroSection = () => {
   return (
@@ -18,6 +19,24 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
+          {/* Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1, duration: 0.6, type: "spring", stiffness: 100 }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="profile-image-wrapper">
+              <div className="profile-image-glow" />
+              <img 
+                src={profileImage} 
+                alt="Profile Photo" 
+                className="profile-image"
+              />
+              <div className="profile-image-ring" />
+            </div>
+          </motion.div>
+
           {/* Status Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
