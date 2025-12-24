@@ -45,7 +45,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-card border border-border"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-muted-foreground">Open to opportunities</span>
+            <span className="text-sm text-muted-foreground">Actively seeking QA / SDET Intern roles</span>
           </motion.div>
 
           {/* Name */}
