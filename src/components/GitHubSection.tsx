@@ -31,9 +31,9 @@ const repositories = [
 ];
 
 const stats = [
-  { label: 'Repositories', value: '15+' },
-  { label: 'Contributions', value: '200+' },
-  { label: 'Test Frameworks', value: '3' },
+  { label: 'Followers', value: '7' },
+  { label: 'Following', value: '1' },
+  { label: 'Repositories', value: '10+' },
 ];
 
 const GitHubSection = () => {
@@ -68,12 +68,12 @@ const GitHubSection = () => {
                 <Github className="w-10 h-10 text-primary" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-1">@yourusername</h3>
-                <p className="text-muted-foreground">Software Tester • QA Enthusiast • Open Source Contributor</p>
+                <h3 className="text-2xl font-bold mb-1">@Code-By-Adarsh</h3>
+                <p className="text-muted-foreground">CS Undergraduate • QA Engineer • Open Source Project Owner</p>
               </div>
             </div>
             <a
-              href="https://github.com"
+              href="https://github.com/Code-By-Adarsh"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -100,7 +100,7 @@ const GitHubSection = () => {
           {repositories.map((repo, index) => (
             <motion.a
               key={repo.name}
-              href={`https://github.com/yourusername/${repo.name}`}
+              href={`https://github.com/Code-By-Adarsh/${repo.name}`}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}

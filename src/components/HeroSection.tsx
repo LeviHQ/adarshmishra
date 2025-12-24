@@ -104,7 +104,7 @@ const HeroSection = () => {
             className="flex items-center justify-center gap-4"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/Code-By-Adarsh"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
@@ -113,7 +113,7 @@ const HeroSection = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/adarsh-jayprakash-mishra"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"

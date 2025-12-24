@@ -28,7 +28,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/Code-By-Adarsh"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all"
@@ -37,7 +37,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/adarsh-jayprakash-mishra"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all"
@@ -46,7 +46,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:adarshmishra70931@gmail.com"
               className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary transition-all"
               aria-label="Email"
             >

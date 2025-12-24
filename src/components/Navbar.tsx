@@ -67,34 +67,65 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
+      </nav>
+
+      {/* Mobile Menu - Outside nav for proper overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-4 pb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 md:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            {/* Menu Panel */}
+            <motion.div
+              initial={{ opacity: 0, x: '100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 h-full w-72 bg-background border-l border-border z-50 md:hidden"
             >
-              <div className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="nav-link py-2"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-                <a href="#contact" className="btn-primary text-sm text-center mt-2">
+              <div className="flex flex-col h-full p-6">
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="self-end p-2 text-foreground hover:text-primary transition-colors mb-8"
+                  aria-label="Close menu"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+
+                {/* Nav Links */}
+                <div className="flex flex-col gap-4">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="nav-link py-2 text-lg"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <a 
+                  href="#contact" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="btn-primary text-center mt-8"
+                >
                   Get in Touch
                 </a>
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+          </>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };
