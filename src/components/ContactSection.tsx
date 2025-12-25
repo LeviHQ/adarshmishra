@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, Linkedin, Github, Send, MapPin, Phone } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram, Send, MapPin, Phone } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const contactInfo = [
@@ -22,6 +22,12 @@ const contactInfo = [
     label: 'GitHub',
     value: '@Code-By-Adarsh',
     href: 'https://github.com/Code-By-Adarsh',
+  },
+  {
+    icon: Instagram,
+    label: 'Instagram',
+    value: '@ltx_adarsh18',
+    href: 'https://www.instagram.com/ltx_adarsh18',
   },
   {
     icon: MapPin,

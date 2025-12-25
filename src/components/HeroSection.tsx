@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, FileText, Github, Linkedin } from 'lucide-react';
+import { ArrowDown, FileText, Github, Linkedin, Instagram } from 'lucide-react';
 import profileImage from '@/assets/profile-placeholder.jpg';
 
 const HeroSection = () => {
@@ -120,6 +120,15 @@ const HeroSection = () => {
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/ltx_adarsh18"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+              aria-label="Instagram Profile"
+            >
+              <Instagram className="w-5 h-5" />
             </a>
           </motion.div>
         </motion.div>
