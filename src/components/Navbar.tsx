@@ -22,12 +22,19 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
         isScrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border' : 'bg-transparent'
       }`}
     >
@@ -78,7 +85,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-[900] md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             {/* Menu Panel */}
@@ -87,7 +94,7 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-72 bg-background border-l border-border z-50 md:hidden"
+              className="fixed inset-y-0 right-0 w-72 bg-background/95 backdrop-blur-xl border-l border-border z-[1000] md:hidden"
             >
               <div className="flex flex-col h-full p-6">
                 {/* Close Button */}
