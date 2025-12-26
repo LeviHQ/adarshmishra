@@ -5,35 +5,43 @@ import { Github, Star, GitFork, ExternalLink, Code2, TestTube2, FileCode } from 
 
 const repositories = [
   {
-    name: 'selenium-automation-framework',
-    description: 'Production-ready Selenium WebDriver automation framework with TestNG, POM pattern, and Excel-driven testing.',
+    name: 'Mail-Karo',
+    description: 'Self-made AI SaaS product that automates email writing, sending, and analysis using Gemini API. Open for contributions!',
+    language: 'CSS',
+    stars: 6,
+    forks: 25,
+    topics: ['ai', 'saas', 'gemini-api', 'email-automation'],
+  },
+  {
+    name: 'Automation-Testing-Projects',
+    description: 'Collection of Selenium automation projects covering basic, intermediate and advanced frameworks with TestNG.',
     language: 'Java',
-    stars: 12,
-    forks: 5,
+    stars: 3,
+    forks: 0,
     topics: ['selenium', 'testng', 'automation', 'java'],
   },
   {
-    name: 'postman-api-collection',
-    description: 'Comprehensive API test collection for RESTful services with pre-request scripts and environment variables.',
-    language: 'JSON',
-    stars: 8,
-    forks: 3,
-    topics: ['postman', 'api-testing', 'newman', 'ci-cd'],
+    name: 'Manual-Testing-Projects',
+    description: 'Real-world Manual Testing projects including E-commerce & Banking with test plans, test cases, bug reports and RTM.',
+    language: 'Markdown',
+    stars: 2,
+    forks: 1,
+    topics: ['manual-testing', 'qa', 'stlc', 'documentation'],
   },
   {
-    name: 'manual-testing-docs',
-    description: 'Test plan, test cases, RTM, and bug reports templates following IEEE standards for QA documentation.',
-    language: 'Markdown',
-    stars: 15,
-    forks: 10,
-    topics: ['testing', 'documentation', 'qa', 'templates'],
+    name: 'Api-Testing-Learning',
+    description: 'Learn and practice API Testing using Postman and Rest Assured with requests, collections, and Java-based automation.',
+    language: 'Java',
+    stars: 1,
+    forks: 0,
+    topics: ['postman', 'rest-assured', 'api-testing', 'java'],
   },
 ];
 
 const stats = [
   { label: 'Followers', value: '7' },
   { label: 'Following', value: '1' },
-  { label: 'Repositories', value: '10+' },
+  { label: 'Pinned Repos', value: '6' },
 ];
 
 const GitHubSection = () => {
@@ -68,8 +76,9 @@ const GitHubSection = () => {
                 <Github className="w-10 h-10 text-primary" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-1">@Code-By-Adarsh</h3>
-                <p className="text-muted-foreground">CS Undergraduate • QA Engineer • Open Source Project Owner</p>
+                <h3 className="text-2xl font-bold mb-1">Adarsh Jayprakash Mishra</h3>
+                <p className="text-muted-foreground">CS Undergraduate • Software Tester • Open Source Project Owner of Mail Karo</p>
+                <p className="text-sm text-muted-foreground/80 mt-1">🔥 Discipline over motivation Always</p>
               </div>
             </div>
             <a
