@@ -43,20 +43,21 @@ const AboutSection = () => {
             <h2 className="section-title mb-6">About Me</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a final-year BSc Computer Science student with a focused interest in 
-                <span className="text-foreground font-medium"> Software Testing and Quality Assurance</span>. 
-                I believe that quality is not an afterthought—it should be built into every line of code.
+                I'm a <span className="text-foreground font-medium">CS Undergraduate from Maharashtra, India</span>, 
+                skilled in Manual Testing & learning Automation to become a QA Engineer. 
+                I'm also the open-source project owner of <span className="text-primary font-medium">Mail Karo</span> - an AI-powered email automation tool.
               </p>
               <p>
-                My approach to testing combines methodical manual testing with automation to ensure 
-                comprehensive coverage. I've worked with Selenium WebDriver, Postman for API testing, 
-                and have hands-on experience creating test documentation that follows industry standards.
+                I'm proficient in <span className="text-foreground font-medium">Manual Testing, Automation Testing, Java, Git & GitHub, Maven, MySQL, Selenium, TestNG, POM, and Postman</span>. 
+                Currently building skills in Playwright, Jenkins, Appium, Rest-Assured, JUnit, BDD (Cucumber), and Jira.
               </p>
               <p>
-                I'm actively seeking 
-                <span className="text-foreground font-medium"> fresher to junior-level roles </span> 
-                in Software Testing, QA Engineering, or SDET positions where I can contribute to 
-                delivering reliable software while growing my expertise.
+                <span className="text-primary font-medium">Postman API Fundamentals – Student Expert</span> certified. 
+                I'm actively seeking fresher to junior-level roles in Software Testing, QA Engineering, or SDET positions 
+                where I can contribute to delivering reliable software.
+              </p>
+              <p className="text-foreground font-medium italic">
+                ⚡ Believe In Yourself.
               </p>
             </div>
           </motion.div>
