@@ -76,25 +76,28 @@ const Navbar = () => {
 
       </nav>
 
-      {/* Mobile Menu - Outside nav for proper overlay */}
+      {/* Mobile Menu - Full screen overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-background/95 backdrop-blur-md z-[900] md:hidden"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[9999] md:hidden"
+          >
+            {/* Full Screen Background */}
+            <div 
+              className="absolute inset-0 bg-background"
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            {/* Menu Panel */}
+            
+            {/* Menu Content */}
             <motion.div
-              initial={{ opacity: 0, x: '100%' }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: '100%' }}
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed inset-y-0 right-0 w-72 bg-background/95 backdrop-blur-xl border-l border-border z-[1000] md:hidden"
+              className="absolute inset-y-0 right-0 w-72 bg-card border-l border-border flex flex-col"
             >
               <div className="flex flex-col h-full p-6">
                 {/* Close Button */}
@@ -130,7 +133,7 @@ const Navbar = () => {
                 </a>
               </div>
             </motion.div>
-          </>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.header>
