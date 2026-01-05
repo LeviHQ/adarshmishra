@@ -85,7 +85,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-background/80 backdrop-blur-sm z-[900] md:hidden"
+              className="fixed inset-0 bg-background/95 backdrop-blur-md z-[900] md:hidden"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             {/* Menu Panel */}
