@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Bug } from 'lucide-react';
 
@@ -76,66 +77,66 @@ const Navbar = () => {
 
       </nav>
 
-      {/* Mobile Menu - Full screen overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] md:hidden"
-          >
-            {/* Full Screen Background */}
-            <div 
-              className="absolute inset-0 bg-background"
-              onClick={() => setIsMobileMenuOpen(false)}
-            />
-            
-            {/* Menu Content */}
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute inset-y-0 right-0 w-72 bg-card border-l border-border flex flex-col"
-            >
-              <div className="flex flex-col h-full p-6">
-                {/* Close Button */}
-                <button
+      {/* Mobile Menu - Rendered in a portal to avoid stacking-context issues */}
+      {typeof document !== 'undefined' &&
+        createPortal(
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <>
+                {/* Backdrop (always full-screen) */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 bg-background z-[9998] md:hidden"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="self-end p-2 text-foreground hover:text-primary transition-colors mb-8"
-                  aria-label="Close menu"
-                >
-                  <X className="w-6 h-6" />
-                </button>
+                />
 
-                {/* Nav Links */}
-                <div className="flex flex-col gap-4">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
+                {/* Menu Panel */}
+                <motion.aside
+                  initial={{ x: '100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: '100%' }}
+                  transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                  className="fixed inset-y-0 right-0 w-72 bg-card border-l border-border z-[9999] md:hidden"
+                  aria-label="Mobile navigation"
+                >
+                  <div className="flex flex-col h-full p-6">
+                    <button
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="nav-link py-2 text-lg"
+                      className="self-end p-2 text-foreground hover:text-primary transition-colors mb-8"
+                      aria-label="Close menu"
                     >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
+                      <X className="w-6 h-6" />
+                    </button>
 
-                {/* CTA Button */}
-                <a 
-                  href="#contact" 
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="btn-primary text-center mt-8"
-                >
-                  Get in Touch
-                </a>
-              </div>
-            </motion.div>
-          </motion.div>
+                    <div className="flex flex-col gap-4">
+                      {navLinks.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="nav-link py-2 text-lg"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+
+                    <a
+                      href="#contact"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="btn-primary text-center mt-8"
+                    >
+                      Get in Touch
+                    </a>
+                  </div>
+                </motion.aside>
+              </>
+            )}
+          </AnimatePresence>,
+          document.body
         )}
-      </AnimatePresence>
     </motion.header>
   );
 };
