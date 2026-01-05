@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Github, Star, GitFork, ExternalLink, Code2, TestTube2, FileCode } from 'lucide-react';
+import { Github, Star, GitFork, ExternalLink, FileCode } from 'lucide-react';
 
 const repositories = [
   {
@@ -105,7 +105,7 @@ const GitHubSection = () => {
 
         {/* Featured Repositories */}
         <h3 className="text-xl font-semibold mb-6">Featured Repositories</h3>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {repositories.map((repo, index) => (
             <motion.a
               key={repo.name}

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, Linkedin, Github, Instagram, Send, MapPin, Phone } from 'lucide-react';
+import { Mail, Linkedin, Github, Instagram, Send, MapPin } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const contactInfo = [
